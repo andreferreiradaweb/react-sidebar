@@ -1,11 +1,13 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Layout from './layout'
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <Layout />
       <Switch>
-        <Route  exact path="/" component={() => <>Hello router</>}/>
+        <Route  exact path="/" />
       </Switch>
     </BrowserRouter>
   )
