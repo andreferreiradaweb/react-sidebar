@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from 'react'
 import * as S from './styled'
 import * as FaIcons from "react-icons/fa"
@@ -5,8 +6,8 @@ import Sidebar from '../sidebar'
 
 
 
-function Narbar() {
-  const [sidebar, setSidebar] = useState(false)
+function Navbar() {
+  const [sidebar, setSidebar]: any = useState(false)
 
   const handleClick = () => setSidebar(!sidebar)
 
@@ -17,9 +18,9 @@ function Narbar() {
           <FaIcons.FaBars onClick={handleClick} />
         </S.NavbarLink>
       </S.NavBar>
-      {sidebar ? <Sidebar /> : '' }
+      {sidebar ? <Sidebar setsidebar={setSidebar} /> : '' }
     </>
   )
 }
 
-export default Narbar
+export default Navbar

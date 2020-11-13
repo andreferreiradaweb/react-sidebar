@@ -1,14 +1,18 @@
+// @ts-nocheck
 import React from 'react'
 import * as S from './styled'
 import * as AiIcons from "react-icons/ai"
 import { SidebarContent } from '../sidebar/sidebarContent'
 
-function Sidebar() {
+function Sidebar({ setsidebar }) {
+
+  const handleClick = () => setsidebar(false)
+
   return (
     <S.Sidebar>
       <S.SidebarList>
         <S.SidebarText>
-          <S.SidebarLinkClose to="#">
+          <S.SidebarLinkClose onClick={handleClick} to="#">
             <AiIcons.AiOutlineClose />
           </S.SidebarLinkClose>
         </S.SidebarText>
