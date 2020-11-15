@@ -1,5 +1,6 @@
 // @ts-nocheck
 import React, { useState } from 'react'
+import { ValueContext } from '../sidebar/ValueProvider'
 import * as S from './styled'
 import * as FaIcons from "react-icons/fa"
 import Sidebar from '../sidebar'
@@ -7,18 +8,20 @@ import Sidebar from '../sidebar'
 
 
 function Navbar() {
-  const [sidebar, setSidebar]: any = useState(false)
-
-  const handleClick = () => setSidebar(!sidebar)
+  const [value, setValue] = useState(false)
+  
+  const handleClick = () => setValue(!value)
 
   return (
     <>
-      <S.NavBar>
-        <S.NavbarLink to="#">
-          <FaIcons.FaBars onClick={handleClick} />
-        </S.NavbarLink>
-      </S.NavBar>
-      {sidebar ? <Sidebar setsidebar={setSidebar} /> : '' }
+      <ValueContext.Provider value={{ value, setValue }}>
+        <S.NavBar>
+          <S.NavbarLink to="#">
+            <FaIcons.FaBars onClick={handleClick} />
+          </S.NavbarLink>
+        </S.NavBar>
+        {value ? <Sidebar /> : ''}
+      </ValueContext.Provider>
     </>
   )
 }

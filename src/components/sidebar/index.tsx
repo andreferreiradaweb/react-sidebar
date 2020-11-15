@@ -1,12 +1,14 @@
 // @ts-nocheck
-import React from 'react'
+import React, { useContext } from 'react'
+import { ValueContext } from './ValueProvider'
 import * as S from './styled'
 import * as AiIcons from "react-icons/ai"
 import { SidebarContent } from '../sidebar/sidebarContent'
 
-function Sidebar({ setsidebar }) {
+function Sidebar() {
+  const { value, setValue } = useContext(ValueContext)
 
-  const handleClick = () => setsidebar(false)
+  const handleClick = () => setValue(!value)
 
   return (
     <S.Sidebar>
