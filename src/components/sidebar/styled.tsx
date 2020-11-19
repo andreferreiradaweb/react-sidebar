@@ -1,17 +1,24 @@
-import styled from 'styled-components'
+// @ts-nocheck
+import styled, { keyframes } from 'styled-components'
 import { Link } from 'react-router-dom'
+import { fadeInRight } from 'react-animations';
+
+const bounceAnimation = keyframes`${fadeInRight}`;
+
+export const BounceDiv = styled.div`
+  animation: 850ms ${bounceAnimation};
+`;
 
 export const Sidebar = styled.nav`
-  background-color: #060b26;
-  width: 250px;
-  height: 100vh;
-  display:flex;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  /* left: $props => !sidebar ? "100%" : '' }; */
-  transition: 850ms;
+    background-color: #060b26;
+    width: 250px;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    position: relative;
+    top: 0;
 `
+
 export const SidebarList = styled.ul`
   font-size: 1.5rem;
   background: none;

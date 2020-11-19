@@ -11,6 +11,7 @@ function Sidebar() {
   const handleClick = () => setValue(!value)
 
   return (
+<S.BounceDiv>
     <S.Sidebar>
       <S.SidebarList>
         <S.SidebarText>
@@ -28,6 +29,7 @@ function Sidebar() {
         ))}
       </S.SidebarList>
     </S.Sidebar>
+    </S.BounceDiv>
   )
 }
 
